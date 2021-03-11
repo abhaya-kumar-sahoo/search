@@ -1,4 +1,3 @@
-
 const express = require("express");
 const ejs= require('ejs');
 const bodyParser=require('body-parser')
@@ -7,9 +6,10 @@ const mongoose = require('mongoose');
 var env = require('dotenv').config()
 const app=express();
 const port= process.env.PORT || 3000;
-// mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-mongoose.connect(' mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
+//mongodb://127.0.0.1:27017
+//mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+mongoose.connect('mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+    useNewUrlParser: true, 
     useUnifiedTopology: true 
   }, (err) => { 
     if (!err) {
@@ -17,7 +17,7 @@ mongoose.connect(' mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb
     } else {
       console.log('Error in DB connection : ' + err);
     } 
-  });   
+  });    
   
  
 app.use(express.static('public'))
@@ -44,6 +44,9 @@ app.get('/',(req,res)=>{
   // res.sendFile(path.join(__dirname+'/index.html'));
   res.render('index');
 
+})
+app.get('/Gallery',(req,res)=>{
+  res.render('a')
 })
 
 app.post('/login',(req,res)=>{
