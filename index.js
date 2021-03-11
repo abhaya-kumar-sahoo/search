@@ -41,7 +41,8 @@ const userSchema=new mongoose.Schema({
 const User= new mongoose.model("User", userSchema);
 
 app.get('/',(req,res)=>{
-  res.sendFile(path.join(__dirname+'/index.html'));
+  // res.sendFile(path.join(__dirname+'/index.html'));
+  res.render('index');
 
 })
 
@@ -78,7 +79,7 @@ app.post('/success',(req,res)=>{
 });  
 
 app.post('/',(req,res)=>{
-  res.sendFile(path.join(__dirname+'/index.html'));
+  res.render('index');
 })
 
 app.listen(port, function () {
