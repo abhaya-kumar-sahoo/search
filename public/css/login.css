@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(95, 16, 89);
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+body{
+    background-color: darkcyan;
+}
+label{
+    color: white;
+    font-weight: bolder;
+    
+}
+.submit{
+    text-align: center;
+}
