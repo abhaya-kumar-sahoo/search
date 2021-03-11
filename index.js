@@ -6,6 +6,7 @@ const path= require('path');
 const mongoose = require('mongoose');
 var env = require('dotenv').config()
 const app=express();
+const port= process.env.PORT || 3000;
 // mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 mongoose.connect(' mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true,
@@ -80,7 +81,6 @@ app.post('/',(req,res)=>{
   res.sendFile(path.join(__dirname+'/index.html'));
 })
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, function () {
-  console.log('Server is started on http://127.0.0.1:'+PORT);
+app.listen(port, function () {
+  console.log('Server is started on http://127.0.0.1:'+port);
 }); 
