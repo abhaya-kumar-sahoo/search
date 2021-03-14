@@ -8,7 +8,7 @@ const app=express();
 const port= process.env.PORT || 3000;
 //mongodb://127.0.0.1:27017
 //mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-mongoose.connect('mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majoritya', {
     useNewUrlParser: true, 
     useUnifiedTopology: true 
   }, (err) => { 
@@ -48,7 +48,13 @@ app.get('/',(req,res)=>{
 app.get('/Gallery',(req,res)=>{
   res.render('a')
 })
+app.get('/Contact',(req,res)=>{
+  res.render('contact')
+})
 
+app.get("/Notice",(req,res)=>{
+  res.render("notice")
+})
 app.post('/login',(req,res)=>{
     res.render("login")
 })
