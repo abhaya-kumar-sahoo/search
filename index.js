@@ -6,17 +6,19 @@ const mongoose = require('mongoose');
 var env = require('dotenv').config()
 const app=express();
 const port= process.env.PORT || 3000;
-//mongodb://127.0.0.1:27017
-//mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-mongoose.connect('mongodb+srv://newuser:KbIFiKPlRdgJNvCz@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majoritya', {
+//mongodb://127.0.0.1:27017 
+// YkTJWBRHzPsZrnaN
+//mongodb+srv://newuser:YkTJWBRHzPsZrnaN@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+//mongodb+srv://newuser:YkTJWBRHzPsZrnaN@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+mongoose.connect('mongodb+srv://newuser:YkTJWBRHzPsZrnaN@cluster0.hvrc4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true, 
     useUnifiedTopology: true 
   }, (err) => { 
-    if (!err) {
+    if (!err) { 
       console.log('MongoDB Connection Succeeded.');
     } else {
       console.log('Error in DB connection : ' + err);
-    } 
+    }  
   });    
   
  
@@ -35,7 +37,12 @@ const userSchema=new mongoose.Schema({
     address2:String,
     state:String,
     dist:String,
-    pincode:Number
+    pincode:Number,
+    
+    email1:String,
+    name1:String,
+    message:String,
+    subject:String
     
 })
 const User= new mongoose.model("User", userSchema);
@@ -55,6 +62,10 @@ app.get('/Contact',(req,res)=>{
 app.get("/Notice",(req,res)=>{
   res.render("notice")
 })
+app.get('/Payment',(req,res)=>{
+  res.render('payment')
+})
+
 app.post('/login',(req,res)=>{
     res.render("login")
 })
@@ -86,6 +97,26 @@ app.post('/success',(req,res)=>{
             }
         })
 });  
+app.post('/',(req,res)=>{
+  res.render('index');
+})
+
+app.post('/Thanks',(req,res)=>{
+  const newUser1= new User({
+            name1:req.body.name1,
+            subject:req.body.subject,
+            email1:req.body.email1,
+            message:req.body.message
+  });
+newUser1.save((err)=>{
+  if(err){
+    console.log(err)
+  }else{
+    res.render('logout')
+  }
+})
+
+})
 
 app.post('/',(req,res)=>{
   res.render('index');

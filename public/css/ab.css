@@ -1,126 +1,36 @@
 
-*{
-  padding: 0rem;
-  margin: 0rem;
-  box-sizing: border-box;
-}
-body{
-  background-color: rgb(10, 43, 44);
-  margin: 0rem;
-  font-family: 'segoe ui';
-}
-
-.nav {
-  height: 50px;
-  width: 100%;
-  background-color: #4d4d4d;
-  position: relative;
-}
-
-.nav > .nav-header {
-  display: inline;
-}
-
-.nav > .nav-header > .nav-title {
-  display: inline-block;
-  font-size:2.0vw;
-  color: rgb(10, 185, 77);
-  padding: 10px 10px 10px 10px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.nav > .nav-btn {
-  display: none;
-}
-
-.nav > .nav-links {
-  display: inline;
-  float: right;
-  font-family: cosmic;
-  font-size: 2vw;
-}
-
-.nav > .nav-links > a {
-  display: inline-block;
-  padding: 13px 10px 13px 10px;
-  text-decoration: none;
-  color: #efefef;
-}
-
-.nav > .nav-links > a:hover {
-  background-color: rgba(7, 161, 7, 0.514);
-}
-
-.nav > #nav-check {
-  display: none;
-}
-
-@media (max-width:600px) {
-  .nav > .nav-btn {
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-  }
-  .nav > .nav-btn > label {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    padding: 13px;
-  }
-  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  .nav > .nav-btn > label > span {
-    display: block;
-    width: 25px;
-    height: 10px;
-    border-top: 2px solid #eee;
-  }
-  .nav > .nav-links {
-    position: absolute;
-    display: block;
-    width: 100%;
-    background-color: #333;
-    height: 0px;
-    transition: all 0.3s ease-in;
-    overflow-y: hidden;
-    top: 50px;
-    left: 0px;
-  }
-  .nav > .nav-links > a {
-    display: block;
-    width: 100%;
-  }
-  .nav > #nav-check:not(:checked) ~ .nav-links {
-    height: 0px;
-  }
-  .nav > #nav-check:checked ~ .nav-links {
-    height: calc(100vh - 50px);
-    overflow-y: auto;
-  }
-}
 
 .space{
   margin-top: 10vh;
 }
 .head{
   text-align: center;
-  background-color: rgb(9, 71, 83);
+  /* background-color: rgb(9, 71, 83); */
+  padding-top: 2vw;
+ background-color: yellowgreen;
+
 }
-.head >h1{
-  color: rgb(199, 196, 23);
+.head1{
+  text-align: center;
+  /* background-color: rgb(9, 71, 83); */
+  padding-top:2vw;
+
+
+}
+
+.head1 >h1{
+  color: rgb(224, 221, 0);
   font-family: 'Courier New', Courier, monospace;
   font-weight: bolder;
-  font-size: 2.6vw;
+  font-size: 2rem;
 }
-.head >h4{
-  color: rgb(201, 193, 193);
-  font-size: 2vw;
+.head1 >h4{
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .images >h3{
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 0.8vw;
+  font-size: 0.8rem;
 }
