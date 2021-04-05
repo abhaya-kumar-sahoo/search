@@ -10,6 +10,7 @@ body{
   font-family: 'segoe ui';
 }
 
+
 .nav {
   height: 50px;
   width: 100%;
@@ -203,10 +204,18 @@ h4{
   align-items: center;
   background-color: rgba(255, 255, 255, 0.315);
   border-radius: 2vw 0vw 2vw 0vw;
+  z-index: -1;
+position:relative;
 
 }
 .imge{
   height: 39vw;
   width: 100vw;
   border-radius: 2vw 0vw 2vw 0vw;
+  z-index: -1;
+
+}
+img{
+  z-index: -1;
+
 }
